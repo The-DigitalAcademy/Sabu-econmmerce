@@ -107,7 +107,7 @@ function sportOnline(i) {
 
     saveToStorage()
 
-    readLocalStorage()
+    readLocalToStorage()
 
     DatatableMainsfulls()   
 }
@@ -147,7 +147,7 @@ function removeClear(i) {
 
     saveToStorage()
 
-    readLocalStorage()
+    readLocalToStorage()
 
     DatatableMainsfulls()
     
@@ -179,24 +179,13 @@ function CalcuTotal() {
 function saveToStorage() {
 
     //JSON.STRINGIFY FOR CHANGE ARRY TO STRING
-    let data = JSON.stringifyO(sportCart)
-    localStorage.setItem('sportCart',data)
-    
+    let data = JSON.stringify(sportCart)
+    localStorage.setItem('sportCart',data)  
 }
 
-
-
-
-// function saveToStorage() {
-
-//     // JSON.stringify FOR CHANGE ARRAY TO STRING
-//     let data = JSON.stringify(sportCart)
-//     localStorage.setItem('sportCart',data)
-    
-// }
-
 // // ADD FUNCTION READ LOCAL STORAGE IT USERS
-// function readLocalStorage() {
-//     let data = JSON.parse(localStorage.getItem('sportCart'))
-//     sportCart = data
-// }
+
+function readLocalToStorage() {
+    let data = JSON.parse(localStorage.getItem('sportCart'))
+    sportCart = data 
+}
