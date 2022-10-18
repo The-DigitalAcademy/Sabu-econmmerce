@@ -175,6 +175,18 @@ function CalcuTotal() {
 }
 
 // // ADD FUNCTION SAVA DATA INTO LOCAL STORAGE
+
+function saveToStorage() {
+
+    //JSON.STRINGIFY FOR CHANGE ARRY TO STRING
+    let data = JSON.stringifyO(sportCart)
+    localStorage.setItem('sportCart',data)
+    
+}
+
+
+
+
 // function saveToStorage() {
 
 //     // JSON.stringify FOR CHANGE ARRAY TO STRING
