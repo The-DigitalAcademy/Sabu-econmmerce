@@ -101,20 +101,22 @@ function sportOnline(i) {
     sportCart.push(mainsfullState[i])
     document.getElementById('mainsCartOnline').innerHTML = sportCart.length;
 
-    mainp()
-
     CalcuTotal()
 
     saveToStorage()
 
     readLocalToStorage()
 
-    DatatableMainsfulls()   
+    DatatableMainsfulls()
+
+    mainp()
 }
 
 
 // ADD FUNCTION FOR DISPLAY INTO FROM COUNT AND CART
 function mainp() {
+
+    readLocalToStorage()
     mainpDisplay.innerHTML = ""
 
     for (let i = 0; i < sportCart.length; i++) {
@@ -141,8 +143,6 @@ function removeClear(i) {
     sportCart.splice(i, 1)
     document.getElementById('mainsCartOnline').innerHTML = sportCart.length;
 
-    mainp()
-
     CalcuTotal()
 
     saveToStorage()
@@ -151,12 +151,8 @@ function removeClear(i) {
 
     DatatableMainsfulls()
     
+    mainp()
 }
-mainp()
-
-
-DatatableMainsfulls()
-
 
 // ADD FUNCTION FOR CALCULATOR AND LOOP, TOTAL
 function CalcuTotal() {
@@ -168,10 +164,6 @@ function CalcuTotal() {
     }
 
     totalCash.innerHTML = "R" +total
-
-    mainp()
-
-    DatatableMainsfulls()   
 }
 
 // // ADD FUNCTION SAVA DATA INTO LOCAL STORAGE
@@ -189,3 +181,7 @@ function readLocalToStorage() {
     let data = JSON.parse(localStorage.getItem('sportCart'))
     sportCart = data 
 }
+
+mainp()
+
+DatatableMainsfulls()
